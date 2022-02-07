@@ -26,4 +26,11 @@ flush privileges;
 select * from employees;
 
 
+delete from employees
+where id = 1;
 
+update employees
+set id = 2
+where id = 3;
+
+ALTER TABLE employees AUTO_INCREMENT = 3;

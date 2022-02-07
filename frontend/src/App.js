@@ -2,7 +2,7 @@ import React from "react";
 import './App.css'
 // import Form from './components/Form/Form.js'
 import { useState } from "react";
-import axios from 'axios';
+import Axios from 'axios';
 
 const App = () => {
 
@@ -14,8 +14,8 @@ const App = () => {
 
 
   const addEmployee = () => {
-    console.log(name, age, country, position, wage);
-    axios.post('http://localhost:3000/create', {
+    // console.log(name, age, country, position, wage);
+    Axios.post('http://localhost:3001/create', {
       name: name,
       age: age,
       country: country,

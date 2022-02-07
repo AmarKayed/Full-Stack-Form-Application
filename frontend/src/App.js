@@ -1,8 +1,20 @@
-import './App.css';
+import React from "react";
+import './App.css'
+import Form from './components/Form/Form.js'
 
 const App = () => {
   return (
     <div className="App">
+      <div className = "formArea">
+        <Form label = "Name" type = "text" />
+        <Form label = "Age" type = "number" />
+        <Form label = "Country" type = "text" />
+        <Form label = "Position" type = "text" />
+        <Form label = "Wage(year)" type = "number" />
+        
+      </div>
+
+      <button className = "submitButton">Add Employee</button>
       
     </div>
   );

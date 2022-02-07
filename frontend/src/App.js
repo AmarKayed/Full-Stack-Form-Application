@@ -2,6 +2,7 @@ import React from "react";
 import './App.css'
 // import Form from './components/Form/Form.js'
 import { useState } from "react";
+import axios from 'axios';
 
 const App = () => {
 
@@ -12,9 +13,20 @@ const App = () => {
   const [wage, setWage] = useState(0);
 
 
-  const displayInfo = () => {
+  const addEmployee = () => {
     console.log(name, age, country, position, wage);
-  }
+    axios.post('http://localhost:3000/create', {
+      name: name,
+      age: age,
+      country: country,
+      position: position,
+      wage: wage
+    }).then(() => {
+      console.log("success");
+    });
+
+  };
+
   return (
     <div className="App">
       <div className = "formArea">
@@ -53,7 +65,7 @@ const App = () => {
 
       </div>
 
-      <button className = "submitButton" onClick={displayInfo}>Add Employee</button>
+      <button className = "submitButton" onClick={addEmployee}>Add Employee</button>
       
     </div>
   );

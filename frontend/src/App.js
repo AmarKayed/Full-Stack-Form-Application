@@ -25,6 +25,15 @@ const App = () => {
       wage: wage
     }).then(() => {
       console.log("success");
+      setEmployees([...employees, 
+        {
+          name: name,
+          age: age,
+          country: country,
+          position: position,
+          wage: wage
+        }
+      ])
     });
 
   };

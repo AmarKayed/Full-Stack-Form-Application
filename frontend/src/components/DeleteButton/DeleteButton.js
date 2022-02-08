@@ -6,18 +6,30 @@ const DeleteButton = () => {
 
     const [buttonClicked, setButtonClicked] = useState(false);
 
+    const confirmationModal= () => {
+        setButtonClicked(!buttonClicked);
+    }
+
     const deleteEmployee = () => {
-        setButtonClicked(true);
+        
     }
 
     return (
-        <div className = "deleteButton">
-            <span onClick={deleteEmployee}>x</span>
+        <div>
+            <button className = "deleteButton" onClick={confirmationModal}>x</button>
+            
+            {
+            buttonClicked 
+            && 
             <div className="confirmationModal">
                 <p>are you sure you want to delete this?</p>
-                <button>yes</button>
-                <button>no</button>
+                
+                <div className = "confirmationButtons">
+                    <button onClick = {deleteEmployee}>yes</button>
+                    <button onClick = {confirmationModal}>no</button>
+                </div>
             </div>
+            }
         </div>
     )
 

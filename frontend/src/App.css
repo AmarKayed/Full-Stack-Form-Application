@@ -72,9 +72,10 @@ button:hover{
 	justify-content: space-evenly;
 	border: 1px solid black;
 	list-style: none;
+	
 	width: 75%;
-
 	height: auto;
+	
 	margin: 0px;
 	background-color: wheat;
 

@@ -3,6 +3,7 @@ import './App.css'
 // import Form from './components/Form/Form.js'
 import { useState , useEffect } from "react";
 import Axios from 'axios';
+import SearchBar from "./components/SearchBar/SearchBar";
 
 const App = () => {
 
@@ -47,7 +48,8 @@ const App = () => {
       })
   }
 
-  const existEmployees = employees.length == 0 ? false : true;
+  const existEmployees = employees.length === 0 ? false : true;
+
   useEffect(()=>{
     console.log(employees, existEmployees);
   }, [])
@@ -96,6 +98,7 @@ const App = () => {
       
       {existEmployees && 
         <div className = "employees">
+          <SearchBar />
           {
           employees.map((value) => {
             return (
@@ -109,11 +112,7 @@ const App = () => {
               </ul>
             )
             
-            // <li>Name: {value.name}</li>
-            // <li>Age: {value.age}</li>
-            // <li>Country: {value.country}</li>
-            // <li>Position: {value.position}</li>
-            // <li>Wage: {value.wage}</li>
+
 
           })
           }

@@ -33,7 +33,7 @@ form input{
 	padding-left: 20px;
 }
 
-.submitButton{
+button{
 	margin-top: 20px;
 	height: 10%;
 	width: 35%;
@@ -44,7 +44,7 @@ form input{
 	transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
 
-.submitButton:hover{
+button:hover{
 	background-color: green;
 	color: white;
 }

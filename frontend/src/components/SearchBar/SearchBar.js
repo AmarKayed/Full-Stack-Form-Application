@@ -11,6 +11,7 @@ const SearchBar = () => {
 
     return(
         <input type = "text" placeholder = "Search By Name" value = {searchValue} onChange = {updateSearchValue}></input>
+        
     )
 }
 

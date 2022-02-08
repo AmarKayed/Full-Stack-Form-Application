@@ -3,7 +3,7 @@ import './App.css'
 // import Form from './components/Form/Form.js'
 import { useState , useEffect } from "react";
 import Axios from 'axios';
-import SearchBar from "./components/SearchBar/SearchBar";
+// import SearchBar from "./components/SearchBar/SearchBar";
 
 const App = () => {
 
@@ -54,6 +54,15 @@ const App = () => {
     console.log(employees, existEmployees);
   }, [])
 
+
+  const [searchValue, setSearchValue] = useState('');
+
+  const updateSearchValue = (event) => {
+      setSearchValue(event.target.value);
+  }
+
+  const filteredEmployees = employees.filter((employee) => {return employee.name.includes(searchValue)})
+
   return (
     <div className="App">
       <div className = "formArea">
@@ -98,22 +107,27 @@ const App = () => {
       
       {existEmployees && 
         <div className = "employees">
-          <SearchBar />
+
+        <input type = "text" placeholder = "Search By Name" value = {searchValue} onChange = {updateSearchValue}></input>
+    
+
           {
-          employees.map((value) => {
-            return (
-              <ul className = "employee" key = {value.name}>
-                <li>Name: <p>{value.name}</p></li>
-                <li>Age: <p>{value.age}</p></li>
-                <li>Country: <p>{value.country}</p></li>
-                <li>Position: <p>{value.position}</p></li>
-                <li>Wage: <p>{value.wage}</p></li>
-                
-              </ul>
-            )
+          employees
+            .filter((employee) => {
+              return employee.name.includes(searchValue)
+            })
+            .map((value) => {
+              return (
+                <ul className = "employee" key = {value.name}>
+                  <li>Name: <p>{value.name}</p></li>
+                  <li>Age: <p>{value.age}</p></li>
+                  <li>Country: <p>{value.country}</p></li>
+                  <li>Position: <p>{value.position}</p></li>
+                  <li>Wage: <p>{value.wage}</p></li>
+                  
+                </ul>
+              )
             
-
-
           })
           }
         </div>

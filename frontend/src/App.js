@@ -4,6 +4,7 @@ import './App.css'
 import { useState , useEffect } from "react";
 import Axios from 'axios';
 // import SearchBar from "./components/SearchBar/SearchBar";
+import Modal from './components/Modal/Modal.js'
 
 const App = () => {
 
@@ -60,11 +61,14 @@ const App = () => {
   const updateSearchValue = (event) => {
       setSearchValue(event.target.value);
   }
-
+  const clearSearchBar = () => {
+    setSearchValue('');
+  }
   const filteredEmployees = employees.filter((employee) => {return employee.name.includes(searchValue)})
 
   return (
     <div className="App">
+      
       <div className = "formArea">
         <form>
           <label>Name:</label>
@@ -109,7 +113,7 @@ const App = () => {
         <div className = "employees">
 
         <input className = "searchBar" type = "text" placeholder = "Search By Name" value = {searchValue} onChange = {updateSearchValue}></input>
-    
+        <button className = "clearButton" onClick={clearSearchBar}>Clear</button>
 
           {
           employees
@@ -118,14 +122,17 @@ const App = () => {
             })
             .map((value) => {
               return (
-                <ul className = "employee" key = {value.name}>
-                  <li>Name: <p>{value.name}</p></li>
-                  <li>Age: <p>{value.age}</p></li>
-                  <li>Country: <p>{value.country}</p></li>
-                  <li>Position: <p>{value.position}</p></li>
-                  <li>Wage: <p>{value.wage}</p></li>
-                  
-                </ul>
+                <div className = "employee" key = {value.name} style = {{positon: 'relative'}}>
+                  <Modal />
+                  <ul>
+                    <li>Name: <p>{value.name}</p></li>
+                    <li>Age: <p>{value.age}</p></li>
+                    <li>Country: <p>{value.country}</p></li>
+                    <li>Position: <p>{value.position}</p></li>
+                    <li>Wage: <p>{value.wage}</p></li>
+                    
+                  </ul>
+                </div>
               )
             
           })

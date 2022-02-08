@@ -5,6 +5,7 @@ import { useState , useEffect } from "react";
 import Axios from 'axios';
 // import SearchBar from "./components/SearchBar/SearchBar";
 import Modal from './components/Modal/Modal.js'
+import DeleteButton from "./components/DeleteButton/DeleteButton";
 
 const App = () => {
 
@@ -130,7 +131,7 @@ const App = () => {
                     <li>Country: <p>{value.country}</p></li>
                     <li>Position: <p>{value.position}</p></li>
                     <li>Wage: <p>{value.wage}</p></li>
-                    
+                    <DeleteButton />
                   </ul>
                 </div>
               )

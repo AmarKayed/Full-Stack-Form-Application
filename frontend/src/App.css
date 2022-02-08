@@ -79,6 +79,8 @@ form input{
 	background-color: lightblue;
 }
 
+
+
 .employee ul{
 	display: flex;
 	align-items: center;
@@ -94,6 +96,8 @@ form input{
 
 	margin: 7vh auto;
 	padding: 2vh 0px;
+	
+	position: relative;
 }
 
 /* .employee li > p{
@@ -113,6 +117,8 @@ form input{
 
     border-radius: 5px;
 }
+
+
 
 .clearButton{
 	height: 30px;

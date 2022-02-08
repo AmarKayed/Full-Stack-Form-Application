@@ -70,13 +70,13 @@ button:hover{
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
+	
 	border: 1px solid black;
 	list-style: none;
 	
 	width: 75%;
 	height: auto;
 	
-	margin: 0px;
 	background-color: wheat;
 
 	margin: 7vh auto;
@@ -86,3 +86,16 @@ button:hover{
 	width: 75%;
 	background-color: red;
 } */
+
+
+
+.searchBar{
+	width: 35%;
+	height: 4vh;
+    
+    padding: 8px;
+    padding-left: 25px;
+    font-size: 20px;
+
+    border-radius: 5px;
+}

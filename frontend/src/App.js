@@ -108,7 +108,7 @@ const App = () => {
       {existEmployees && 
         <div className = "employees">
 
-        <input type = "text" placeholder = "Search By Name" value = {searchValue} onChange = {updateSearchValue}></input>
+        <input className = "searchBar" type = "text" placeholder = "Search By Name" value = {searchValue} onChange = {updateSearchValue}></input>
     
 
           {

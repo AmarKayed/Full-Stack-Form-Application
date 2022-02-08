@@ -46,6 +46,24 @@ app.get('/getEmployees', (req, res) => {
 })
 
 
+
+app.delete('/deleteEmployee', (req, res) => {
+  console.log(req.body.employee);
+  const {id, name, age, country, position, wage} = req.body.employee;
+  db.query('DELETE FROM employees WHERE id = ? AND name = ? AND age = ? AND country = ? AND position = ? AND wage = ?',
+  [id, name, age, country, position, wage],
+  (err, result)=>{
+    if(err)
+      console.log(err);
+    else
+      res.send(result);
+    
+  }
+  )
+})
+
+
+
 app.listen(3001, () => {
   console.log("listening to port 3001...")
 })

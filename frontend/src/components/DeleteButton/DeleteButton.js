@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React from "react";
+import { useState } from "react";
 import './DeleteButton.css';
+import Axios from "axios";
 
-const DeleteButton = () => {
+const DeleteButton = (props) => {
 
     const [buttonClicked, setButtonClicked] = useState(false);
 
@@ -11,7 +12,12 @@ const DeleteButton = () => {
     }
 
     const deleteEmployee = () => {
-        
+        console.log(props.employee);
+        Axios
+            .delete('http://localhost:3001/deleteEmployee', {data: {employee: props.employee}})
+            .then((response)=>{
+                console.log(response);
+            })
     }
 
     return (

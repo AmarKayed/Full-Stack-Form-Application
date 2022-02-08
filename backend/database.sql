@@ -57,6 +57,7 @@ ALTER TABLE employees AUTO_INCREMENT = 13;
 
 
 
+insert into employees (name, age, country, position, wage)
+values ('Daniel', 30, 'UK', 'Head Pediatrician', 144000);
 
-
-
+commit;

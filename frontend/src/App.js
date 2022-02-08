@@ -68,7 +68,7 @@ const App = () => {
 
   return (
     <div className="App">
-      
+
       <div className = "formArea">
         <form>
           <label>Name:</label>
@@ -112,8 +112,8 @@ const App = () => {
       {existEmployees && 
         <div className = "employees">
 
-        <input className = "searchBar" type = "text" placeholder = "Search By Name" value = {searchValue} onChange = {updateSearchValue}></input>
-        <button className = "clearButton" onClick={clearSearchBar}>Clear</button>
+          <input className = "searchBar" type = "text" placeholder = "Search By Name" value = {searchValue} onChange = {updateSearchValue}></input>
+          {/* <button className = "clearButton" onClick={clearSearchBar}>Clear</button> */}
 
           {
           employees

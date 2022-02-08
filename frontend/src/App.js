@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css'
 // import Form from './components/Form/Form.js'
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import Axios from 'axios';
 
 const App = () => {
@@ -37,6 +37,11 @@ const App = () => {
         setEmployees(response.data);
       })
   }
+
+  const existEmployees = employees.length == 0 ? false : true;
+  useEffect(()=>{
+    console.log(employees, existEmployees);
+  }, [])
 
   return (
     <div className="App">
@@ -79,14 +84,31 @@ const App = () => {
       <button className = "submitButton" onClick={addEmployee}>Add Employee</button>
       <hr></hr>
       <button className = "showEmployees" onClick={getEmployees}>Show Employees</button>
-      {employees && 
-        <ul>
+      
+      {existEmployees && 
+        <div className = "employees">
           {
-          employees.map((value, index) => {
-            return <li>{value.name}</li>
+          employees.map((value) => {
+            return (
+              <ul className = "employee" key = {value.name}>
+                <li>Name: <p>{value.name}</p></li>
+                <li>Age: <p>{value.age}</p></li>
+                <li>Country: <p>{value.country}</p></li>
+                <li>Position: <p>{value.position}</p></li>
+                <li>Wage: <p>{value.wage}</p></li>
+                
+              </ul>
+            )
+            
+            // <li>Name: {value.name}</li>
+            // <li>Age: {value.age}</li>
+            // <li>Country: {value.country}</li>
+            // <li>Position: {value.position}</li>
+            // <li>Wage: {value.wage}</li>
+
           })
           }
-        </ul>
+        </div>
       }
     </div>
   );

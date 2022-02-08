@@ -48,3 +48,40 @@ button:hover{
 	background-color: green;
 	color: white;
 }
+
+
+
+
+
+/*
+	This is the styling of the Conditional Rendered Components.
+*/
+
+.employees{
+
+	width: 100%;
+	height: auto;
+	padding: 30px 0px;
+	margin-top: 5vh;
+	background-color: lightblue;
+}
+
+.employee{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	border: 1px solid black;
+	list-style: none;
+	width: 75%;
+
+	height: auto;
+	margin: 0px;
+	background-color: wheat;
+
+	margin: 7vh auto;
+}
+
+/* .employee li > p{
+	width: 75%;
+	background-color: red;
+} */

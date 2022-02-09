@@ -71,14 +71,26 @@ app.delete('/deleteEmployee', (req, res) => {
         if(err)
           console.log(err);
         else
-          db.query('ALTER TABLE employees AUTO_INCREMENT = (SELECT max(id) FROM employees)', 
+          db.query('SELECT max(id) FROM employees',
           (err, result) => {
             if(err)
               console.log(err);
-            else 
-              res.send(result);
-          }
-          )
+            else{
+              maxID = Object.values(JSON.parse(JSON.stringify(result[0])))[0];
+              
+              db.query('ALTER TABLE employees AUTO_INCREMENT = ?', [maxID],
+              (err, result) => {
+                if(err)
+                  console.log(err);
+                else {
+                  console.log("aici");
+                  res.send(result);
+                }
+              }
+              )
+            }
+          })
+        
       })
     }
   })

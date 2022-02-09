@@ -47,13 +47,13 @@ select * from employees;
 
 
 delete from employees
-where id = 14;
+where id = 15;
 
 update employees
-set id = 2
-where id = 3;
+set id = 14
+where id = 13;
 
-ALTER TABLE employees AUTO_INCREMENT = 13;
+ALTER TABLE employees AUTO_INCREMENT = 14;
 
 
 

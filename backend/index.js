@@ -48,18 +48,40 @@ app.get('/getEmployees', (req, res) => {
 
 
 app.delete('/deleteEmployee', (req, res) => {
-  console.log(req.body.employee);
+  // console.log(req.body.employee);
   const {id, name, age, country, position, wage} = req.body.employee;
+
+  db.query('SELECT * FROM employees WHERE id = ?', [id], 
+  (err, result) => {
+    if(err)
+      console.log(err);
+    else if(result.length === 0)
+      res.status(500).send({ error: 'Employee Doesn\'t Exist!' })
+  })
+
+
   db.query('DELETE FROM employees WHERE id = ? AND name = ? AND age = ? AND country = ? AND position = ? AND wage = ?',
   [id, name, age, country, position, wage],
   (err, result)=>{
     if(err)
       console.log(err);
-    else
-      res.send(result);
-    
-  }
-  )
+    else{
+      db.query('UPDATE employees SET id = id - 1 WHERE id > ?', [id], 
+      (err, result) => {
+        if(err)
+          console.log(err);
+        else
+          db.query('ALTER TABLE employees AUTO_INCREMENT = (SELECT max(id) FROM employees)', 
+          (err, result) => {
+            if(err)
+              console.log(err);
+            else 
+              res.send(result);
+          }
+          )
+      })
+    }
+  })
 })
 
 

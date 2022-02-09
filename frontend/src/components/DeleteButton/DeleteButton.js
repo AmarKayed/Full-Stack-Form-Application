@@ -17,7 +17,9 @@ const DeleteButton = (props) => {
             .delete('http://localhost:3001/deleteEmployee', {data: {employee: props.employee}})
             .then((response)=>{
                 console.log(response);
-            });
+                console.log("1");
+            })
+            .catch((error) => {console.log("2")});
         confirmationModal();
     }
 

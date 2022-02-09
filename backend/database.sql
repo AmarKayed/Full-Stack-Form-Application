@@ -61,3 +61,6 @@ insert into employees (name, age, country, position, wage)
 values ('Daniel', 30, 'UK', 'Head Pediatrician', 144000);
 
 commit;
+
+
+alter table employees auto_increment = (select max(id) from employees);

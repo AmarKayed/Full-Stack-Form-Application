@@ -1,0 +1,14 @@
+insert into employees(id,name,age,country,position,wage) values(1,'Tom',21,'USA','Head Master Engineer',100000);
+insert into employees(id,name,age,country,position,wage) values(2,'Alex',37,'Canada','Executive Manager',350000);
+insert into employees(id,name,age,country,position,wage) values(3,'Michael',29,'UK','Senior Doctor',235000);
+insert into employees(id,name,age,country,position,wage) values(4,'George',30,'Pakistan','Senior Arhitect',400000);
+insert into employees(id,name,age,country,position,wage) values(5,'Jerry',45,'Netherlands','Executive Sales Manager',265000);
+insert into employees(id,name,age,country,position,wage) values(6,'Maria',25,'France','Junior Software Developer',143000);
+insert into employees(id,name,age,country,position,wage) values(7,'Jonathan',33,'Germany','Senior Editor',75000);
+insert into employees(id,name,age,country,position,wage) values(8,'Andrew',36,'Canada','Executive Lawyer',186000);
+insert into employees(id,name,age,country,position,wage) values(9,'Tommy',19,'Belgium','Junior UI Designer',95000);
+insert into employees(id,name,age,country,position,wage) values(10,'Mathew',23,'France','Intern Dentist',65000);
+insert into employees(id,name,age,country,position,wage) values(11,'Alexander',41,'USA','Executive Marketing Manager',170000);
+insert into employees(id,name,age,country,position,wage) values(12,'John',24,'Canada','Intern Backend Developer',68000);
+insert into employees(id,name,age,country,position,wage) values(13,'Johnny',34,'Belgium','Senior Orthodontist',327000);
+insert into employees(id,name,age,country,position,wage) values(14,'Daniel',30,'UK','Head Pediatrician',144000);

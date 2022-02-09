@@ -50,8 +50,9 @@ delete from employees
 where id = 15;
 
 update employees
-set id = 14
-where id = 13;
+set id = id + 1
+where id >= 1
+ORDER BY id desc;
 
 ALTER TABLE employees AUTO_INCREMENT = 14;
 

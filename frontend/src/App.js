@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css'
-// import Form from './components/Form/Form.js'
+import Form from './components/Form/Form.js'
 import { useState , useEffect } from "react";
 import Axios from 'axios';
 // import SearchBar from "./components/SearchBar/SearchBar";
@@ -56,6 +56,9 @@ const App = () => {
     console.log(employees, existEmployees);
   }, [])
 
+  // useEffect(()=>{
+  //   console.log(name);
+  // }, [name])
 
   const [searchValue, setSearchValue] = useState('');
 
@@ -71,39 +74,13 @@ const App = () => {
     <div className="App">
 
       <div className = "formArea">
-        <form>
-          <label>Name:</label>
-          <input type = "text" onChange={(event) => {setName(event.target.value); }}></input>
-        </form>
-      
-        <form>
-          <label>Age:</label>
-          <input type = "number" onChange={(event) => {setAge(event.target.value)}}></input>
-        </form>
-
-        <form>
-          <label>Country:</label>
-          <input type = "text" onChange={(event) => {setCountry(event.target.value)}}></input>
-        </form>
-
-        <form>
-          <label>Position:</label>
-          <input type = "text" onChange={(event) => {setPosition(event.target.value)}}></input>
-        </form>
-
-        <form>
-          <label>Wage(year):</label>
-          <input type = "number" onChange={(event) => {setWage(event.target.value)}}></input>
-        </form>
-
-        {/* 
-        <Form label = "Name" type = "text" />
-        <Form label = "Age" type = "number" />
-        <Form label = "Country" type = "text" />
-        <Form label = "Position" type = "text" />
-        <Form label = "Wage(year)" type = "number" />
-         */}
-
+        
+        <Form label = "Name" type = "text" state = {name} setState = {setName} />
+        <Form label = "Age" type = "number" state = {age} setState = {setAge} />
+        <Form label = "Country" type = "text" state = {country} setState = {setCountry} />
+        <Form label = "Position" type = "text" state = {position} setState = {setPosition} />
+        <Form label = "Wage(year)" type = "number" state = {wage} setState = {setWage} />
+        
       </div>
 
       <button className = "submitButton" onClick={addEmployee}>Add Employee</button>

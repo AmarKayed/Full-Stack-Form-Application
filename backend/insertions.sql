@@ -12,3 +12,4 @@ insert into employees(id,name,age,country,position,wage) values(11,'Alexander',4
 insert into employees(id,name,age,country,position,wage) values(12,'John',24,'Canada','Intern Backend Developer',68000);
 insert into employees(id,name,age,country,position,wage) values(13,'Johnny',34,'Belgium','Senior Orthodontist',327000);
 insert into employees(id,name,age,country,position,wage) values(14,'Daniel',30,'UK','Head Pediatrician',144000);
+insert into employees(id,name,age,country,position,wage) values(15,'Denise',22,'USA','Intern Teacher',58000);

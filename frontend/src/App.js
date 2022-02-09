@@ -1,11 +1,14 @@
 import React from "react";
-import './App.css'
-import Form from './components/Form/Form.js'
 import { useState , useEffect } from "react";
 import Axios from 'axios';
-// import SearchBar from "./components/SearchBar/SearchBar";
-import Modal from './components/Modal/Modal.js'
+
+import './App.css'
+
+import Form from './components/Form/Form.js';
+import SearchBar from "./components/SearchBar/SearchBar";
+import Modal from './components/Modal/Modal.js';
 import DeleteButton from "./components/DeleteButton/DeleteButton";
+
 
 const App = () => {
 
@@ -60,14 +63,11 @@ const App = () => {
   //   console.log(name);
   // }, [name])
 
+
+
   const [searchValue, setSearchValue] = useState('');
 
-  const updateSearchValue = (event) => {
-      setSearchValue(event.target.value);
-  }
-  const clearSearchBar = () => {
-    setSearchValue('');
-  }
+
   const filteredEmployees = employees.filter((employee) => {return employee.name.includes(searchValue)})
 
   return (
@@ -90,8 +90,7 @@ const App = () => {
       {existEmployees && 
         <div className = "employees">
 
-          <input className = "searchBar" type = "text" placeholder = "Search By Name" value = {searchValue} onChange = {updateSearchValue}></input>
-          {/* <button className = "clearButton" onClick={clearSearchBar}>Clear</button> */}
+          <SearchBar searchValue = {searchValue} setSearchValue = {setSearchValue}/>
 
           {
           employees

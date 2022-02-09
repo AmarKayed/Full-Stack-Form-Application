@@ -2,16 +2,22 @@ import React from "react";
 import { useState } from "react";
 import './SearchBar.css'
 
-const SearchBar = () => {
-    const [searchValue, setSearchValue] = useState('');
+const SearchBar = (props) => {
+    // const [searchValue, setSearchValue] = useState('');
 
     const updateSearchValue = (event) => {
-        setSearchValue(event.target.value);
+        props.setSearchValue(event.target.value);
+    }
+    const clearSearchBar = () => {
+      props.setSearchValue('');
     }
 
     return(
-        <input type = "text" placeholder = "Search By Name" value = {searchValue} onChange = {updateSearchValue}></input>
-        
+        <div>
+            <input className = "searchBar" type = "text" placeholder = "Search By Name" value = {props.searchValue} onChange = {updateSearchValue}></input>
+            
+            {props.searchValue && <button className = "clearButton" onClick={clearSearchBar}>Clear</button>}
+        </div>
     )
 }
 

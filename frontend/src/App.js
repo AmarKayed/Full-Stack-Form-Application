@@ -131,7 +131,7 @@ const App = () => {
                     <li>Country: <p>{value.country}</p></li>
                     <li>Position: <p>{value.position}</p></li>
                     <li>Wage: <p>{value.wage}</p></li>
-                    <DeleteButton employee = {value}/>
+                    <DeleteButton employee = {value} employees = {employees} setEmployees = {setEmployees}/>
                   </ul>
                 </div>
               )

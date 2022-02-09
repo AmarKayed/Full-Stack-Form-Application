@@ -1,3 +1,4 @@
 1. Shifting id's
 2. Clear Button
 3. Update Button + Modal Popup with update form
+4. Update Employee List After Delete

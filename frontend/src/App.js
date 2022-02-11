@@ -8,6 +8,7 @@ import Form from './components/Form/Form.js';
 import SearchBar from "./components/SearchBar/SearchBar";
 import Modal from './components/Modal/Modal.js';
 import DeleteButton from "./components/DeleteButton/DeleteButton";
+import EditButton from "./components/EditButton/EditButton";
 
 
 const App = () => {
@@ -100,7 +101,7 @@ const App = () => {
             .map((value) => {
               return (
                 <div className = "employee" key = {value.name} style = {{positon: 'relative'}}>
-                  <Modal />
+                  {/* <Modal /> */}
                   <ul>
                     <li>Name: <p>{value.name}</p></li>
                     <li>Age: <p>{value.age}</p></li>
@@ -108,6 +109,7 @@ const App = () => {
                     <li>Position: <p>{value.position}</p></li>
                     <li>Wage: <p>{value.wage}</p></li>
                     <DeleteButton employee = {value} employees = {employees} setEmployees = {setEmployees}/>
+                    <EditButton />
                   </ul>
                 </div>
               )

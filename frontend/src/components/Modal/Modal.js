@@ -1,10 +1,16 @@
 import React from "react";
 import './Modal.css'
 
-const Modal = () => {
+const Modal = (props) => {
+
+    const modalDisappear = () => {
+        props.setButtonClicked(!props.buttonClicked);
+    }
+
     return (
         <div className = "modalBackground">
             <div className = "modal">
+                <button className = "exit" onClick = {modalDisappear}>X</button>
                 {/* <div className = "formArea">
             
                     <Form label = "Name" type = "text" state = {name} setState = {setName} />

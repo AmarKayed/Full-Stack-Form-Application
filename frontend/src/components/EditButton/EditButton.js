@@ -12,7 +12,7 @@ const EditButton = () => {
     return(
     <div className = "editButton">
         <button onClick = {modalAppear}>Edit</button>
-        {buttonClicked && <Modal />}
+        {buttonClicked && <Modal buttonClicked = {buttonClicked} setButtonClicked = {setButtonClicked}/>}
     </div>
         
     )

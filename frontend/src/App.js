@@ -109,7 +109,7 @@ const App = () => {
                     <li>Position: <p>{value.position}</p></li>
                     <li>Wage: <p>{value.wage}</p></li>
                     <DeleteButton employee = {value} employees = {employees} setEmployees = {setEmployees}/>
-                    <EditButton />
+                    <EditButton employee = {value} />
                   </ul>
                 </div>
               )

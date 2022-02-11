@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './EditButton.css'
 import Modal from '../Modal/Modal';
-const EditButton = () => {
+const EditButton = (props) => {
 
     const [buttonClicked, setButtonClicked] = useState(false);
 
@@ -12,7 +12,7 @@ const EditButton = () => {
     return(
     <div className = "editButton">
         <button onClick = {modalAppear}>Edit</button>
-        {buttonClicked && <Modal buttonClicked = {buttonClicked} setButtonClicked = {setButtonClicked}/>}
+        {buttonClicked && <Modal employee = {props.employee} buttonClicked = {buttonClicked} setButtonClicked = {setButtonClicked}/>}
     </div>
         
     )

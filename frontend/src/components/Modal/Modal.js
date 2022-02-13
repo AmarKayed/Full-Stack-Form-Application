@@ -2,10 +2,11 @@ import React, {useState} from "react";
 import './Modal.css'
 
 import Form from '../Form/Form'
+import Axios from "axios";
 
 const Modal = (props) => {
 
-
+    const id = props.employee.id;
     const [name, setName] = useState(props.employee.name);
     const [age, setAge] = useState(props.employee.age);
     const [country, setCountry] = useState(props.employee.country);
@@ -14,6 +15,23 @@ const Modal = (props) => {
 
     const modalDisappear = () => {
         props.setButtonClicked(!props.buttonClicked);
+    }
+
+
+    const updateEmployee = () => {
+        Axios.put('http://localhost:3001/update', {
+            id: id,
+            name: name,
+            age: age,
+            country: country,
+            position: position,
+            wage: wage
+        }).then((response) => {
+            // console.log(response);
+            alert("succes!");
+        }).catch((err) => {
+            console.log(err);
+        })
     }
 
     return (
@@ -30,7 +48,7 @@ const Modal = (props) => {
                     
                 </div>
                 <div className = "updateButton">
-                    <button>Update Details</button>
+                    <button onClick = {updateEmployee}>Update Details</button>
                 </div>
                 
 

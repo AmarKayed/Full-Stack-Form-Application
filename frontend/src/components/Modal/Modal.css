@@ -41,3 +41,17 @@
 .modalFormArea{
     height: 75%;
 }
+
+.updateButton{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+The stylings for .updateButton button 
+are the same as the ones for .showEmployees 
+and .submitButton, these are located
+in the App.css file. 
+*/

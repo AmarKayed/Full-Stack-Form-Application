@@ -29,8 +29,10 @@ const Modal = (props) => {
                     <Form label = "Wage(year)" type = "number" state = {wage} setState = {setWage} />
                     
                 </div>
-
-                <button className = "updateButton">Update Details</button>
+                <div className = "updateButton">
+                    <button>Update Details</button>
+                </div>
+                
 
             </div>
         </div>

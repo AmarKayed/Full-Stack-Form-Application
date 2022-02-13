@@ -14,10 +14,10 @@ import EditButton from "./components/EditButton/EditButton";
 const App = () => {
 
   const [name, setName] = useState('');
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState('');
   const [country, setCountry] = useState('');
   const [position, setPosition] = useState('');
-  const [wage, setWage] = useState(0);
+  const [wage, setWage] = useState('');
 
 
   const [employees, setEmployees] = useState([])

@@ -11,7 +11,7 @@ const Form = (props) => {
     return (
         <form className = "Form">
             <label>{props.label}:</label>
-            <input type = {props.type} onChange={updateSearchValue}></input>
+            <input type = {props.type} onChange={updateSearchValue} value = {props.state}></input>
         </form>
     )
 

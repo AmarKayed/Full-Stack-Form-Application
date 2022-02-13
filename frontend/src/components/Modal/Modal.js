@@ -20,7 +20,7 @@ const Modal = (props) => {
         <div className = "modalBackground">
             <div className = "modal">
                 <button className = "exit" onClick = {modalDisappear}>X</button>
-                <div className = "formArea">
+                <div className = "formArea modalFormArea">
             
                     <Form label = "Name" type = "text" state = {name} setState = {setName} />
                     <Form label = "Age" type = "number" state = {age} setState = {setAge} />
@@ -29,6 +29,9 @@ const Modal = (props) => {
                     <Form label = "Wage(year)" type = "number" state = {wage} setState = {setWage} />
                     
                 </div>
+
+                <button className = "updateButton">Update Details</button>
+
             </div>
         </div>
 

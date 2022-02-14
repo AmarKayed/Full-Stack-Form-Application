@@ -10,8 +10,8 @@ const EditButton = (props) => {
     }
 
     return(
-    <div className = "editButton">
-        <button onClick = {modalAppear}>Edit</button>
+    <div>
+        <button className = "editButton" onClick = {modalAppear}>Edit</button>
         {buttonClicked && <Modal employee = {props.employee} buttonClicked = {buttonClicked} setButtonClicked = {setButtonClicked}/>}
     </div>
         

@@ -11,8 +11,13 @@
     border: none;
 
     cursor: pointer;
+
+    transition: transform 0.2s ease-in;
 }
 
+.deleteButton:hover{
+    transform: scale(1.5);
+}
 
 .confirmationModal{
     position: fixed;
@@ -51,7 +56,7 @@
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    transition: background-color 0.2s ease-in;
+    transition: all 0.2s ease-in;
 
 }
 
@@ -61,4 +66,9 @@
 
 .confirmationButtons button:nth-child(2):hover{
     background-color: red;
+}
+
+.confirmationButtons button:hover{
+    color: white;
+    transform: scale(1.2);
 }

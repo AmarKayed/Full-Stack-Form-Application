@@ -2,6 +2,10 @@
 	font-family: 'Poppins', sans-serif;
 }
 
+button{
+	cursor: pointer;
+}
+
 .App {
 	text-align: center;
 	/* background-color: green; */
@@ -24,7 +28,7 @@
 
 
 
-.showEmployees, .submitButton, .updateButton button{
+.showEmployees, .submitButton, .updateButton button, .editButton{
 	margin: 20px 0px;
 	height: 50px;
 	width: 35%;

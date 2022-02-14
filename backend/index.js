@@ -100,35 +100,50 @@ app.delete('/deleteEmployee', (req, res) => {
 
 app.put('/update', (req, res) => {
   console.log(req.body);
-  db.query('SELECT * FROM employees WHERE id = ?', [req.body.id], 
+  const {id, name, age, country, position, wage} = req.body;
+  // console.log({id, name, age, country, position, wage})
+  db.query('UPDATE employees SET name = ?, age = ?, country = ?, position = ?, wage = ? WHERE id = ?', 
+  [name, age, country, position, wage, id],
   (err, result) => {
     if(err)
       console.log(err);
     else{
-      const [id, name, age, country, position, wage] = Object.values(JSON.parse(JSON.stringify(result[0])));
-      console.log(id, name, age, country, position, wage);
-      if(id == req.body.id && 
-          name == req.body.name &&
-          age == req.body.age &&
-          country == req.body.country &&
-          position == req.body.position &&
-          wage == req.body.wage
-        )
-        res.status(404).send("No Update Made!");
-      else{
-        db.query('UPDATE employees SET name = ?, age = ?, country = ?, position = ?, wage = ? WHERE id = ?', 
-        [name, age, country, position, wage, id],
-        (err, result) => {
-          if(err)
-            console.log(err);
-          else{
-            console.log("aicicicici");
-            res.send(result);
-          }
-        })
-      }
+      console.log("aici a mers");
+      res.send(result);
     }
   })
+
+  // db.query('SELECT * FROM employees WHERE id = ?', [req.body.id], 
+  // (err, result) => {
+  //   if(err)
+  //     console.log(err);
+  //   else{
+  //     const [id, name, age, country, position, wage] = Object.values(JSON.parse(JSON.stringify(result[0])));
+  //     // console.log(id, name, age, country, position, wage);
+  //     if(id == req.body.id && 
+  //         name == req.body.name &&
+  //         age == req.body.age &&
+  //         country == req.body.country &&
+  //         position == req.body.position &&
+  //         wage == req.body.wage
+  //       )
+  //       res.status(404).send("No Update Made!");
+  //     else{
+  //       db.query('UPDATE employees SET name = ?, age = ?, country = ?, position = ?, wage = ? WHERE id = ?', 
+  //       [name, age, country, position, wage, id],
+  //       (err, result) => {
+  //         if(err){
+  //           console.log(err);
+  //           res.status(404).send("Query Error!");
+  //         }
+  //         else{
+  //           console.log("aicicicici");
+  //           res.send(result);
+  //         }
+  //       })
+  //     }
+  //   }
+  // })
 })
 
 

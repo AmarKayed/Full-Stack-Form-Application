@@ -65,3 +65,15 @@ commit;
 
 
 alter table employees auto_increment = (select max(id) from employees);
+
+
+
+
+
+SELECT * FROM fullstackformwebapplication.employees;
+
+use fullstackformwebapplication;
+update employees set name = 'Tom', age = 21 where id = 1;
+rollback;
+
+

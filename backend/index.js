@@ -120,7 +120,7 @@ app.put('/update', (req, res) => {
         s_position == position &&
         s_wage == wage){
           res.status(404).send('Error No Modification Made!');
-          console.log('lol');
+          console.log('Error No Modification Made!');
         }
       else
         ok = true;
@@ -133,46 +133,12 @@ app.put('/update', (req, res) => {
           if(err)
             console.log(err);
           else{
-            console.log("aici a mers");
+            console.log("Succesful Update!");
             res.send(result);
           }
       })
     }
   })
-
-
-
-  // db.query('SELECT * FROM employees WHERE id = ?', [req.body.id], 
-  // (err, result) => {
-  //   if(err)
-  //     console.log(err);
-  //   else{
-  //     const [id, name, age, country, position, wage] = Object.values(JSON.parse(JSON.stringify(result[0])));
-  //     // console.log(id, name, age, country, position, wage);
-  //     if(id == req.body.id && 
-  //         name == req.body.name &&
-  //         age == req.body.age &&
-  //         country == req.body.country &&
-  //         position == req.body.position &&
-  //         wage == req.body.wage
-  //       )
-  //       res.status(404).send("No Update Made!");
-  //     else{
-  //       db.query('UPDATE employees SET name = ?, age = ?, country = ?, position = ?, wage = ? WHERE id = ?', 
-  //       [name, age, country, position, wage, id],
-  //       (err, result) => {
-  //         if(err){
-  //           console.log(err);
-  //           res.status(404).send("Query Error!");
-  //         }
-  //         else{
-  //           console.log("aicicicici");
-  //           res.send(result);
-  //         }
-  //       })
-  //     }
-  //   }
-  // })
 })
 
 

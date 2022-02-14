@@ -31,6 +31,7 @@ const Modal = (props) => {
             alert("succes!");
         }).catch((err) => {
             console.log(err);
+            alert("Updates Cannot Be Performed Without Modifying Any Field!");
         })
     }
 

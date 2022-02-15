@@ -1,12 +1,13 @@
 const express = require('express')
 const app = express()
 const mysql = require("mysql");
+require('dotenv').config();
 
 const db = mysql.createConnection({
-  user: "root",
-  host: "localhost",
-  password: "password",
-  database: "fullstackformwebapplication"
+  user: process.env.USER,
+  host: process.env.HOST,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE
 });
 
 
